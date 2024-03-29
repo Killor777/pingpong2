@@ -1,3 +1,2 @@
-print('hello')
-for i in range(10):
-    print('helloo')
+from pygame import *
+

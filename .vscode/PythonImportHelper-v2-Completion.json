@@ -1,0 +1,10 @@
+[
+    {
+        "label": "*",
+        "importPath": "pygame",
+        "description": "pygame",
+        "isExtraImport": true,
+        "detail": "pygame",
+        "documentation": {}
+    }
+]
