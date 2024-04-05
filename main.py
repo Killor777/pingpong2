@@ -8,7 +8,7 @@ display.set_caption('Pingpong')
 
 img_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))
 img_ball = transform.scale(image.load('ball.png'), (60, 60))
-img_platform = transform.scale(image.load('platform.png'), (60, 60))
+img_platform = transform.scale(image.load('platform.png'), (20, 100))
 
 
 
@@ -28,13 +28,30 @@ class GameSprite(sprite.Sprite):
 class Platform(GameSprite):
     def __init__(self, filename, x, y, speed):
         super().__init__(filename, x, y, speed)
-        #TODO 
 
+    def control(self):
+        keys = key.get_pressed()
+        if keys[K_w]: self.pos_y += self.speed
+        if keys[K_s]: self.pos_y -= self.speed
+
+class Platform2(GameSprite):
+    def __init__(self, filename, x, y, speed):
+        super().__init__(filename, x, y, speed)
+
+    def control(self):
+        keys = key.get_pressed()
+        #TODO add control for second platform
 
 
 
 class Ball(GameSprite):
     pass
+
+
+
+
+platform = Platform(img_platform, 50, 300, 2)
+platform2 = Platform(img_platform, 300, 200, 3)
 
 
 game = True
@@ -50,6 +67,8 @@ while game:
 
     if finish == 0:        
         window.blit(img_back, (0, 0))
+        platform.draw()
+        platform.control()
 
 
 

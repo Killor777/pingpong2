@@ -21,7 +21,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class Platform(GameSprite):\n    def __init__(self, filename, x, y, speed):\n        super().__init__(filename, x, y, speed)\n        #TODO \nclass Ball(GameSprite):\n    pass\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():",
+        "peekOfCode": "class Platform(GameSprite):\n    def __init__(self, filename, x, y, speed):\n        super().__init__(filename, x, y, speed)\n        def control(self)\nclass Ball(GameSprite):\n    pass\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():",
         "detail": "main",
         "documentation": {}
     },
