@@ -1,14 +1,19 @@
 from pygame import *
 
+font.init()
 
 window = display.set_mode((700, 500))
 
 display.set_caption('Pingpong')
-
+clock = time.Clock()
 
 img_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))
 img_ball = transform.scale(image.load('ball.png'), (60, 60))
-img_platform = transform.scale(image.load('platform.png'), (20, 100))
+img_platform = transform.scale(image.load('platform3.png'), (70, 100))
+
+font1 = font.Font(None, 70)
+score = font1.render('0', True, 'gray')
+
 
 
 
@@ -29,29 +34,36 @@ class Platform(GameSprite):
     def __init__(self, filename, x, y, speed):
         super().__init__(filename, x, y, speed)
 
-    def control(self):
+
+    def control_l(self):
         keys = key.get_pressed()
-        if keys[K_w]: self.pos_y += self.speed
-        if keys[K_s]: self.pos_y -= self.speed
+        if keys[K_w] and self.rect.y > 0: self.pos_y -= self.speed
+        if keys[K_s] and self.rect.y < 500 - self.image.get_height(): self.pos_y += self.speed
+        self.rect.y = self.pos_y
 
-class Platform2(GameSprite):
-    def __init__(self, filename, x, y, speed):
-        super().__init__(filename, x, y, speed)
-
-    def control(self):
-        keys = key.get_pressed()
-        #TODO add control for second platform
-
+    def control_r(self):
+        keys2 = key.get_pressed()
+        if keys2[K_UP] and self.rect.y > 0: self.pos_y -= self.speed
+        if keys2[K_DOWN] and self.rect.y < 500 - self.image.get_height(): self.pos_y += self.speed
+        self.rect.y = self.pos_y
 
 
 class Ball(GameSprite):
-    pass
+    def __init__(self, filename, x, y, speed):
+        super().__init__(filename, x, y, speed)
+        self.speed_x = -1
+        self.speed_y = 1
+    
+    def update(self):
+        pass
+    
 
 
 
 
-platform = Platform(img_platform, 50, 300, 2)
-platform2 = Platform(img_platform, 300, 200, 3)
+
+platform_l = Platform(img_platform, 10, 300, 4.2)
+platform_r = Platform(img_platform, 620, 100, 4.2)
 
 
 game = True
@@ -67,10 +79,13 @@ while game:
 
     if finish == 0:        
         window.blit(img_back, (0, 0))
-        platform.draw()
-        platform.control()
+        platform_l.draw()
+        platform_l.control_l()
+        platform_r.draw()
+        platform_r.control_r()
 
 
 
 
     display.update()
+    clock.tick(60)
