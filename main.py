@@ -51,12 +51,13 @@ class Platform(GameSprite):
 class Ball(GameSprite):
     def __init__(self, filename, x, y, speed):
         super().__init__(filename, x, y, speed)
-        self.speed_x = -1
+        self.speed_x = 1
         self.speed_y = 1
     
     def update(self):
-        pass
-    
+        self.rect.x += self.speed_x
+        if self.rect.x > window.get_width():
+           self.speed_x *= -1
 
 
 
@@ -64,7 +65,7 @@ class Ball(GameSprite):
 
 platform_l = Platform(img_platform, 10, 300, 4.2)
 platform_r = Platform(img_platform, 620, 100, 4.2)
-
+ball = Ball(img_ball, 350, 250, 8)
 
 game = True
 
@@ -83,6 +84,8 @@ while game:
         platform_l.control_l()
         platform_r.draw()
         platform_r.control_r()
+        ball.draw()
+        ball.update()
 
 
 

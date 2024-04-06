@@ -21,7 +21,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class Platform(GameSprite):\n    def __init__(self, filename, x, y, speed):\n        super().__init__(filename, x, y, speed)\n        def control(self)\nclass Ball(GameSprite):\n    pass\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():",
+        "peekOfCode": "class Platform(GameSprite):\n    def __init__(self, filename, x, y, speed):\n        super().__init__(filename, x, y, speed)\n    def control_l(self):\n        keys = key.get_pressed()\n        if keys[K_w] and self.rect.y > 0: self.pos_y -= self.speed\n        if keys[K_s] and self.rect.y < 500 - self.image.get_height(): self.pos_y += self.speed\n        self.rect.y = self.pos_y\n    def control_r(self):\n        keys2 = key.get_pressed()",
         "detail": "main",
         "documentation": {}
     },
@@ -30,7 +30,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class Ball(GameSprite):\n    pass\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))",
+        "peekOfCode": "class Ball(GameSprite):\n    def __init__(self, filename, x, y, speed):\n        super().__init__(filename, x, y, speed)\n        self.speed_x = 1\n        self.speed_y = 1\n    def update(self):\n        self.rect.x += self.speed_x\n        if self.rect.x > window.get_width():\n           self.speed_x *= -1\nplatform_l = Platform(img_platform, 10, 300, 4.2)",
         "detail": "main",
         "documentation": {}
     },
@@ -39,7 +39,16 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "window = display.set_mode((700, 500))\ndisplay.set_caption('Pingpong')\nimg_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('ball.png'), (60, 60))\nimg_platform = transform.scale(image.load('platform.png'), (60, 60))\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x",
+        "peekOfCode": "window = display.set_mode((700, 500))\ndisplay.set_caption('Pingpong')\nclock = time.Clock()\nimg_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('ball.png'), (60, 60))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "clock",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "clock = time.Clock()\nimg_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('ball.png'), (60, 60))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img",
         "detail": "main",
         "documentation": {}
     },
@@ -48,7 +57,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "img_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('ball.png'), (60, 60))\nimg_platform = transform.scale(image.load('platform.png'), (60, 60))\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y\n        self.speed = speed",
+        "peekOfCode": "img_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('ball.png'), (60, 60))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x",
         "detail": "main",
         "documentation": {}
     },
@@ -57,7 +66,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "img_ball = transform.scale(image.load('ball.png'), (60, 60))\nimg_platform = transform.scale(image.load('platform.png'), (60, 60))\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y\n        self.speed = speed\n        self.rect = self.image.get_rect()",
+        "peekOfCode": "img_ball = transform.scale(image.load('ball.png'), (60, 60))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y",
         "detail": "main",
         "documentation": {}
     },
@@ -66,7 +75,52 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "img_platform = transform.scale(image.load('platform.png'), (60, 60))\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y\n        self.speed = speed\n        self.rect = self.image.get_rect()\n        self.rect.topleft = (x, y)",
+        "peekOfCode": "img_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y\n        self.speed = speed",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "font1",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "font1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y\n        self.speed = speed\n        self.rect = self.image.get_rect()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "score",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "score = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y\n        self.speed = speed\n        self.rect = self.image.get_rect()\n        self.rect.topleft = (x, y)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "platform_l",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "platform_l = Platform(img_platform, 10, 300, 4.2)\nplatform_r = Platform(img_platform, 620, 100, 4.2)\nball = Ball(img_ball, 350, 250, 8)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        ",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "platform_r",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "platform_r = Platform(img_platform, 620, 100, 4.2)\nball = Ball(img_ball, 350, 250, 8)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "ball",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "ball = Ball(img_ball, 350, 250, 8)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))\n        platform_l.draw()",
         "detail": "main",
         "documentation": {}
     },
@@ -75,7 +129,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "game = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))\n    display.update()",
+        "peekOfCode": "game = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))\n        platform_l.draw()\n        platform_l.control_l()",
         "detail": "main",
         "documentation": {}
     },
@@ -84,7 +138,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "finish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))\n    display.update()",
+        "peekOfCode": "finish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))\n        platform_l.draw()\n        platform_l.control_l()\n        platform_r.draw()",
         "detail": "main",
         "documentation": {}
     }
