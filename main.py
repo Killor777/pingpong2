@@ -8,7 +8,7 @@ display.set_caption('Pingpong')
 clock = time.Clock()
 
 img_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))
-img_ball = transform.scale(image.load('ball.png'), (60, 60))
+img_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))
 img_platform = transform.scale(image.load('platform3.png'), (70, 100))
 
 font1 = font.Font(None, 70)
@@ -56,9 +56,18 @@ class Ball(GameSprite):
     
     def update(self):
         self.rect.x += self.speed_x
-        if self.rect.x > window.get_width():
-           self.speed_x *= -1
+        self.rect.y += self.speed_y
 
+        if self.rect.y > window.get_height() - self.rect.height or self.rect.y < 0:
+            self.speed_y *= -1
+
+
+        if self.rect.x > window.get_width() - self.rect.width or self.rect.x < 0:
+            self.speed_x *= -1
+
+           
+           
+    
 
 
 
@@ -88,7 +97,11 @@ while game:
         ball.update()
 
 
-
+        if sprite.collide_rect(ball, platform_r):
+            ball.speed_x *= -1
+            
+        if sprite.collide_rect(ball, platform_l):
+            ball.speed_x *= -1
 
     display.update()
     clock.tick(60)

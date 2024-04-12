@@ -30,7 +30,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class Ball(GameSprite):\n    def __init__(self, filename, x, y, speed):\n        super().__init__(filename, x, y, speed)\n        self.speed_x = 1\n        self.speed_y = 1\n    def update(self):\n        self.rect.x += self.speed_x\n        if self.rect.x > window.get_width():\n           self.speed_x *= -1\nplatform_l = Platform(img_platform, 10, 300, 4.2)",
+        "peekOfCode": "class Ball(GameSprite):\n    def __init__(self, filename, x, y, speed):\n        super().__init__(filename, x, y, speed)\n        self.speed_x = 1\n        self.speed_y = 1\n    def update(self):\n        self.rect.x += self.speed_x\n        self.rect.y += self.speed_y\n        if self.rect.y > window.get_height() - self.rect.height or self.rect.y < 0:\n            self.speed_y *= -1",
         "detail": "main",
         "documentation": {}
     },
@@ -39,7 +39,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "window = display.set_mode((700, 500))\ndisplay.set_caption('Pingpong')\nclock = time.Clock()\nimg_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('ball.png'), (60, 60))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):",
+        "peekOfCode": "window = display.set_mode((700, 500))\ndisplay.set_caption('Pingpong')\nclock = time.Clock()\nimg_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):",
         "detail": "main",
         "documentation": {}
     },
@@ -48,7 +48,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "clock = time.Clock()\nimg_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('ball.png'), (60, 60))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img",
+        "peekOfCode": "clock = time.Clock()\nimg_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img",
         "detail": "main",
         "documentation": {}
     },
@@ -57,7 +57,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "img_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('ball.png'), (60, 60))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x",
+        "peekOfCode": "img_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x",
         "detail": "main",
         "documentation": {}
     },
@@ -66,7 +66,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "img_ball = transform.scale(image.load('ball.png'), (60, 60))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y",
+        "peekOfCode": "img_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y",
         "detail": "main",
         "documentation": {}
     },
