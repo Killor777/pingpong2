@@ -12,7 +12,8 @@ img_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))
 img_platform = transform.scale(image.load('platform3.png'), (70, 100))
 
 font1 = font.Font(None, 70)
-score = font1.render('0', True, 'gray')
+end = font1.render('YOU LOSE', True, 'red')
+
 
 
 
@@ -69,12 +70,9 @@ class Ball(GameSprite):
            
     
 
-
-
-
 platform_l = Platform(img_platform, 10, 300, 4.2)
 platform_r = Platform(img_platform, 620, 100, 4.2)
-ball = Ball(img_ball, 350, 250, 8)
+ball = Ball(img_ball, 350, 250, 13)
 
 game = True
 
@@ -99,9 +97,16 @@ while game:
 
         if sprite.collide_rect(ball, platform_r):
             ball.speed_x *= -1
-            
+            ball.speed_y *= -1
+
         if sprite.collide_rect(ball, platform_l):
             ball.speed_x *= -1
+            ball.speed_y *= -1
+
+        if window.get_height():
+            lose = font1.render('YOU LOSE', True, 'red')
+            window.blit(lose, (60, 70))
+
 
     display.update()
     clock.tick(60)

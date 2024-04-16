@@ -39,7 +39,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "window = display.set_mode((700, 500))\ndisplay.set_caption('Pingpong')\nclock = time.Clock()\nimg_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):",
+        "peekOfCode": "window = display.set_mode((700, 500))\ndisplay.set_caption('Pingpong')\nclock = time.Clock()\nimg_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nend = font1.render('YOU LOSE', True, 'red')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):",
         "detail": "main",
         "documentation": {}
     },
@@ -48,7 +48,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "clock = time.Clock()\nimg_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img",
+        "peekOfCode": "clock = time.Clock()\nimg_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nend = font1.render('YOU LOSE', True, 'red')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img",
         "detail": "main",
         "documentation": {}
     },
@@ -57,7 +57,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "img_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x",
+        "peekOfCode": "img_back = transform.scale(image.load('white_img_back.png'), (window.get_width(), window.get_height()))\nimg_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nend = font1.render('YOU LOSE', True, 'red')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x",
         "detail": "main",
         "documentation": {}
     },
@@ -66,7 +66,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "img_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y",
+        "peekOfCode": "img_ball = transform.scale(image.load('soccer-ball.png'), (45, 45))\nimg_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nend = font1.render('YOU LOSE', True, 'red')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y",
         "detail": "main",
         "documentation": {}
     },
@@ -75,7 +75,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "img_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y\n        self.speed = speed",
+        "peekOfCode": "img_platform = transform.scale(image.load('platform3.png'), (70, 100))\nfont1 = font.Font(None, 70)\nend = font1.render('YOU LOSE', True, 'red')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y\n        self.speed = speed",
         "detail": "main",
         "documentation": {}
     },
@@ -84,16 +84,16 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "font1 = font.Font(None, 70)\nscore = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y\n        self.speed = speed\n        self.rect = self.image.get_rect()",
+        "peekOfCode": "font1 = font.Font(None, 70)\nend = font1.render('YOU LOSE', True, 'red')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y\n        self.speed = speed\n        self.rect = self.image.get_rect()",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "score",
+        "label": "end",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "score = font1.render('0', True, 'gray')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y\n        self.speed = speed\n        self.rect = self.image.get_rect()\n        self.rect.topleft = (x, y)",
+        "peekOfCode": "end = font1.render('YOU LOSE', True, 'red')\nclass GameSprite(sprite.Sprite):\n    def __init__(self, img, x, y, speed=0):\n        super().__init__()\n        self.image = img\n        self.pos_x = x\n        self.pos_y = y\n        self.speed = speed\n        self.rect = self.image.get_rect()\n        self.rect.topleft = (x, y)",
         "detail": "main",
         "documentation": {}
     },
@@ -102,7 +102,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "platform_l = Platform(img_platform, 10, 300, 4.2)\nplatform_r = Platform(img_platform, 620, 100, 4.2)\nball = Ball(img_ball, 350, 250, 8)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        ",
+        "peekOfCode": "platform_l = Platform(img_platform, 10, 300, 4.2)\nplatform_r = Platform(img_platform, 620, 100, 4.2)\nball = Ball(img_ball, 350, 250, 13)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        ",
         "detail": "main",
         "documentation": {}
     },
@@ -111,7 +111,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "platform_r = Platform(img_platform, 620, 100, 4.2)\nball = Ball(img_ball, 350, 250, 8)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))",
+        "peekOfCode": "platform_r = Platform(img_platform, 620, 100, 4.2)\nball = Ball(img_ball, 350, 250, 13)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))",
         "detail": "main",
         "documentation": {}
     },
@@ -120,7 +120,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "ball = Ball(img_ball, 350, 250, 8)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))\n        platform_l.draw()",
+        "peekOfCode": "ball = Ball(img_ball, 350, 250, 13)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))\n        platform_l.draw()",
         "detail": "main",
         "documentation": {}
     },
