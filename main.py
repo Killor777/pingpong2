@@ -1,5 +1,6 @@
 from pygame import *
 
+
 font.init()
 
 window = display.set_mode((700, 500))
@@ -72,7 +73,7 @@ class Ball(GameSprite):
 
 platform_l = Platform(img_platform, 10, 300, 4.2)
 platform_r = Platform(img_platform, 620, 100, 4.2)
-ball = Ball(img_ball, 350, 250, 13)
+ball = Ball(img_ball, 350, 250, 20)
 
 game = True
 
@@ -103,7 +104,7 @@ while game:
             ball.speed_x *= -1
             ball.speed_y *= -1
 
-        if window.get_height():
+        if sprite.collide_rect(ball, window.get_height()):
             lose = font1.render('YOU LOSE', True, 'red')
             window.blit(lose, (60, 70))
 

@@ -102,7 +102,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "platform_l = Platform(img_platform, 10, 300, 4.2)\nplatform_r = Platform(img_platform, 620, 100, 4.2)\nball = Ball(img_ball, 350, 250, 13)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        ",
+        "peekOfCode": "platform_l = Platform(img_platform, 10, 300, 4.2)\nplatform_r = Platform(img_platform, 620, 100, 4.2)\nball = Ball(img_ball, 350, 250, 20)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        ",
         "detail": "main",
         "documentation": {}
     },
@@ -111,7 +111,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "platform_r = Platform(img_platform, 620, 100, 4.2)\nball = Ball(img_ball, 350, 250, 13)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))",
+        "peekOfCode": "platform_r = Platform(img_platform, 620, 100, 4.2)\nball = Ball(img_ball, 350, 250, 20)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))",
         "detail": "main",
         "documentation": {}
     },
@@ -120,7 +120,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "ball = Ball(img_ball, 350, 250, 13)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))\n        platform_l.draw()",
+        "peekOfCode": "ball = Ball(img_ball, 350, 250, 20)\ngame = True\nfinish = 0\nwhile game:\n    for e in event.get():\n        if e.type == QUIT:\n            game = False\n    if finish == 0:        \n        window.blit(img_back, (0, 0))\n        platform_l.draw()",
         "detail": "main",
         "documentation": {}
     },
